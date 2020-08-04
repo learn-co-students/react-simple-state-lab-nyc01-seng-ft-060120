@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import Cell from './Cell.js'
 
 export default class Matrix extends Component {
   
   genRow = (vals) => {
-    return vals.map(val => <div className="cell"></div>) // replace me and render a cell component instead!
+    return vals.map((val, index) => {
+      return <Cell key={index} value={val} />;
+    })
   }
   
   genMatrix = () => {
@@ -11,6 +14,7 @@ export default class Matrix extends Component {
   }
   
   render() {
+    console.log(this.props)
     return (
       <div id="matrix">
         {this.genMatrix()}
@@ -18,4 +22,25 @@ export default class Matrix extends Component {
     )
   }
   
+}
+
+Matrix.defaultProps = {
+  values: (() => {
+    const row = [
+      "#F00",
+      "#f00",
+      "#F00",
+      "#f00",
+      "#F00",
+      "#f00",
+      "#F00",
+      "#f00",
+      "#F00",
+      "#f00",
+    ];
+    const array = []
+    for(let i = 0; i < 10; i++) {
+      array.push(row)
+    } return array;
+  })()
 }
