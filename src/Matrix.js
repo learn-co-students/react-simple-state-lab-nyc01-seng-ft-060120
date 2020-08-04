@@ -28,15 +28,15 @@ Matrix.defaultProps = {
   values: (() => {
     const row = [
       "#F00",
-      "#f00",
       "#F00",
-      "#f00",
       "#F00",
-      "#f00",
       "#F00",
-      "#f00",
       "#F00",
-      "#f00",
+      "#F00",
+      "#F00",
+      "#F00",
+      "#F00",
+      "#F00",
     ];
     const array = []
     for(let i = 0; i < 10; i++) {
